@@ -1,0 +1,12 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: Install CRI-O
+  author: Mohamed Salah
+  description: CRI-O Installation as Container Runtime
+  galaxy_tags:
+    - crio
+    - container runtime
+    - kubernetes
+    - kubeadm

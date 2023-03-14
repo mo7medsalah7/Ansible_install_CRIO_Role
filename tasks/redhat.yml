@@ -1,0 +1,15 @@
+- name: Add CRI-O Main-Repo
+  shell: |
+    sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable.repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/"{{ OS }}"/devel:/kubic:/libcontainers:/stable.repo
+
+    exit 0
+
+- name: Add CRIO Second Repo
+  shell: |
+    sudo curl -L -o /etc/yum.repos.d/devel:kubic:libcontainers:stable:cri-o:"{{ VERSION }}".repo https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable:/cri-o:/"{{ VERSION }}"/"{{ OS }}"/devel:kubic:libcontainers:stable:cri-o:"{{ VERSION }}".repo
+    
+    exit 0
+- name: Install CRIO Runtime
+  yum:
+    name: cri-o
+    state: present
